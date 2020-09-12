@@ -2,14 +2,25 @@ import firebase from "firebase";
 import "firebase/firestore";
 import "firebase/auth";
 
+// Firebase credentionals
+const {
+  REACT_APP_FIREBASE_API_KEY,
+  REACT_APP_FIREBASE_AUTH_DOMAIN,
+  REACT_APP_FIREBASE_DB_URL,
+  REACT_APP_FIREBASE_PROJECT_ID,
+  REACT_APP_FIREBASE_STORAGE_BUCKET,
+  REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  REACT_APP_FIREBASE_APP_ID,
+} = process.env;
+
 const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyD8WTZwZFmBL18V5EcKsB9u-BLHXT8mqg4",
-  authDomain: "not-amzn.firebaseapp.com",
-  databaseURL: "https://not-amzn.firebaseio.com",
-  projectId: "not-amzn",
-  storageBucket: "not-amzn.appspot.com",
-  messagingSenderId: "551683448894",
-  appId: "1:551683448894:web:b33891c1ef57365164f16f",
+  apiKey: REACT_APP_FIREBASE_API_KEY,
+  authDomain: REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: REACT_APP_FIREBASE_DB_URL,
+  projectId: REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: REACT_APP_FIREBASE_APP_ID,
 });
 
 const db = firebaseApp.firestore();
