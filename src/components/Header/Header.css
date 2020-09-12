@@ -64,4 +64,7 @@
 
 .header__basketCount {
   margin: 0 10px;
+  color: #cd9042;
+  font-size: 16px;
+  font-weight: 800;
 }
