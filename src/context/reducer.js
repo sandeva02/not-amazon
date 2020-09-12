@@ -1,10 +1,12 @@
 export const initialState = {
   basket: [],
+  user: null,
 };
 
 export const actionTypes = {
   ADD_TO_BASKET: "ADD_TO_BASKET",
   REMOVE_FROM_BASKET: "REMOVE_FROM_BASKET",
+  SET_USER: "SET_USER",
 };
 
 export const getBasketTotal = (basket) =>
@@ -29,6 +31,11 @@ const reducer = (state, { type, payload }) => {
             `Can't remove product (id: ${payload}) as its not in basket!`
           );
       return { ...state, basket: newBasket };
+    case actionTypes.SET_USER:
+      return {
+        ...state,
+        user: payload,
+      };
     default:
       return state;
   }
